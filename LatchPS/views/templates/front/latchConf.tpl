@@ -15,14 +15,14 @@
         {l s='To stop using Latch to add an extra security to this account, you just have to unpair your account. After unpairing, this service will be removed from your Latch mobile app. To proceed, press the button below' mod='LatchPS'}.
     </p>
     <form class="std" method="POST" action="{$link->getModuleLink('LatchPS', 'PairingOperations')|escape:'html'}">
-        <input type="hidden" name="latchPaired" value="no">
+        <input type="hidden" name="latchPaired" value="no" autocomplete="off">
         <input type="hidden" name="latchCSRFToken" value="{$latchCSRFToken}">
         <button type="submit" class='unpair_button'>{l s='Unpair your Latch account'  mod='LatchPS'}</button>
     </form>
 {else}
     <h3>{l s='Your account is not protected yet'  mod='LatchPS'}</h3>
     <form class="std" method="POST" action="{$link->getModuleLink('LatchPS', 'PairingOperations')|escape:'html'}">
-        <input type="hidden" name="latchPaired" value="yes">
+        <input type="hidden" name="latchPaired" value="yes" autocomplete="off">
         <input type="hidden" name="latchCSRFToken" value="{$latchCSRFToken}">
         <input type="submit" value="{l s='Protect your account with Latch' mod='LatchPS'}" class="latch_configuration">
     </form>
