@@ -1,6 +1,6 @@
 <h3>{l s='Type your pairing token' mod='LatchPS'}</h3>
 <form method="POST" action="{$link->getModuleLink('LatchPS', 'PairingOperations')|escape:'html'}">
-    <input type="text" class="large-input" name="pairingToken" placeholder="{l s='Type your pairing token' mod='LatchPS'}">
+    <input type="text" class="large-input" name="pairingToken" placeholder="{l s='Type your pairing token' mod='LatchPS'}"  autocomplete="off">
     <input type="hidden" name="latchCSRFToken" value="{$latchCSRFToken}">
     <input type="submit" value="{l s='Pair account' mod='LatchPS'}" class="pairing_token_button">
 </form>
