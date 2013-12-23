@@ -90,17 +90,25 @@ class LatchPSPairingOperationsModuleFrontController extends ModuleFrontControlle
     }
 
     private function processPairingToken() {
-        $this->pairAccount(Tools::getValue("pairingToken"));
         $customerData = LatchData::getLatchDataFromCustomerId($this->getCustomerId());
-        $smarty_variables = array(
-            'isPaired' => $this->containsLatchId($customerData),
-            'imagesURL' => __PS_BASE_URI__ . "modules/" . LATCH_PLUGIN_NAME . "/img/"
-        );
-        if ($smarty_variables['isPaired']) {
-            $smarty_variables['confirmation'] = true;
+        if ($customerData->id_latch != NULL) {
+            // Avoid pairing a user twice
+            $smarty_variables = array(
+                'isPaired' => true,
+            );
         } else {
-            $smarty_variables['latchError'] = true;
+            $this->pairAccount(Tools::getValue("pairingToken"));
+            $customerData = LatchData::getLatchDataFromCustomerId($this->getCustomerId());
+            $smarty_variables = array(
+                'isPaired' => $this->containsLatchId($customerData),
+            );
+            if ($smarty_variables['isPaired']) {
+                $smarty_variables['confirmation'] = true;
+            } else {
+                $smarty_variables['latchError'] = true;
+            }
         }
+        $smarty_variables['imagesURL'] = __PS_BASE_URI__ . "modules/" . LATCH_PLUGIN_NAME . "/img/";
         $this->context->smarty->assign($smarty_variables);
         $this->setCSRFToken();
         return self::$LATCH_CONFIG_TEMPLATE;
