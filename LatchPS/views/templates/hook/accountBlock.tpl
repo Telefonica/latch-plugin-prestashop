@@ -4,7 +4,11 @@
 	</div>
 	<div id="latch_text">
 		<a href="{$link->getModuleLink('LatchPS', 'LatchConf')|escape:'html'}">
-                    {$configurationMessage}
+                    {if $userPaired }
+                        {l s='Unpair your Latch account.' mod='LatchPS'}
+                    {else}
+                        {l s='Protect your account with Latch.' mod='LatchPS'}
+                    {/if}
                 </a>
 	</div>
 </div>
