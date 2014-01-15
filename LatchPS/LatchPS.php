@@ -83,8 +83,10 @@ class LatchPS extends Module {
      */
     public function hookDisplayRightColumn() {
         if ($this->isUserLogged() && $this->currentControllerIs(self::$MY_ACCOUNT_CONTROLLER)) {
+            $customerId = $this->context->cookie->id_customer;
+            $customerData = LatchData::getLatchDataFromCustomerId($customerId);
             $this->context->smarty->assign(array(
-                'configurationMessage' => $this->getMessageFromLatchStatus(),
+                'userPaired' => !empty($customerData->id_latch),
                 'imagesURL' => __PS_BASE_URI__ . "modules/" . LATCH_PLUGIN_NAME . "/img/"
             ));
             return $this->display(__FILE__, 'accountBlock.tpl');
@@ -106,16 +108,6 @@ class LatchPS extends Module {
     private function currentControllerIs($expectedController) {
         return property_exists($this->context->controller, 'php_self') &&
                 $this->context->controller->php_self == $expectedController;
-    }
-    
-    private function getMessageFromLatchStatus() {
-        $customerId = $this->context->cookie->id_customer;
-        $customerData = LatchData::getLatchDataFromCustomerId($customerId);
-        if (!empty($customerData->id_latch)) {
-            return $this->l("Unpair your Latch account");
-        } else {
-            return $this->l("Protect your account with Latch");
-        }
     }
 
     /*
