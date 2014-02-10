@@ -1,4 +1,4 @@
-<h3>{l s='Two factor authentication enabled'}</h3>
+<h3>{l s='Two factor authentication enabled' mod="LatchPS"}</h3>
 <form method="POST" action="{$link->getPageLink('authentication', true)}">
     <label for="twoFactor">{l s='Insert the one-time password' mod="LatchPS"}:</label>
     <input type="text" name="twoFactor" id='twoFactor' autocomplete="off">

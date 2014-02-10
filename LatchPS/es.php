@@ -40,3 +40,6 @@ $_MODULE['<{latchps}default>pairingtoken_dff89e97bbf68bb5a6c53aab0319f32c'] = 'P
 $_MODULE['<{latchps}default>pairingtoken_5f1a93841d318f079325ffb99f9e6950'] = 'Introduzca el código mostrado en la pantalla de su app en la web del servicio que esté pareando';
 $_MODULE['<{latchps}default>accountblock_59c666d9e9cb6f7e621f374f3b2933e4'] = 'Desparear su cuenta de Latch';
 $_MODULE['<{latchps}default>accountblock_bdc2c76b5e5ac0037a0ab6b2500134e4'] = 'Proteja su cuenta con Latch';
+$_MODULE['<{latchps}default>twofactor_023f896b2ef1a3bd75e3ab9bcca9d1bb'] = 'Segundo factor de autenticación activado';
+$_MODULE['<{latchps}default>twofactor_cd0a8e5033d8c0241cd35cca044df990'] = 'Inserte su contraseña de un sólo uso';
+$_MODULE['<{latchps}default>twofactor_a4d3b161ce1309df1c4e25df28694b7b'] = 'Enviar';
