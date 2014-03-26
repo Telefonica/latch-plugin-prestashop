@@ -33,3 +33,17 @@
 
 ##UNINSTALLING THE MODULE IN PRESTASHOP
 * Go to **"Modules"**. Module "Latch" may be searched from the search box on the left. Press on "Uninstall" on the right side, and accept confirmation message.
+
+
+##USE OF LATCH MODULE FOR THE USERS
+**Latch does not affect in any case or in any way the usual operations with an account. It just allows or denies actions over it, acting as an independent extra layer of security that, once removed or without effect, will have no effect over the accounts, that will remain with its original state.**
+
+The user needs the Latch application installed on the phone, and follow these steps:
+
+* **Step 1:** Logged in your own account, go to **"My Account"**, and click on the new button **"Protect your account with Latch"** twice.
+
+* **Step 2:** From the Latch app on the phone, the user has to generate the token, pressing on **“generate pairing code to add service"** at the bottom of the application.
+
+* **Step 3:** The user has to type the characters generated on the phone into the text box displayed on the web page. Click on **"Pair account"** button.
+
+* **Step 4:** Now the user may lock and unlock the account, preventing any unauthorized access.
