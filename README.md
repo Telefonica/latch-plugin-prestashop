@@ -2,7 +2,7 @@
 
 
 ##PREREQUISITES
- * Prestashop version 1.5 or later. **The plugin does NOT work with Prestashop v1.6!**
+ * Prestashop version 1.5.X. **Version 1.6 or later are not supported yet**
 
  * Curl extensions active in PHP (uncomment **"extension=php_curl.dll"** or"** extension=curl.so"** in Windows or Linux php.ini respectively.
 
