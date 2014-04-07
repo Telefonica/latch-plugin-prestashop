@@ -1,8 +1,8 @@
-﻿#LATCH INSTALLATION GUIDE FOR PRESTASHOP
+﻿#LATCH INSTALLATION GUIDE FOR PRESTASHOP 1.5
 
 
 ##PREREQUISITES
- * Prestashop version 1.5 or later.
+ * Prestashop version 1.5 or later. **The plugin does NOT work with Prestashop v1.6!**
 
  * Curl extensions active in PHP (uncomment **"extension=php_curl.dll"** or"** extension=curl.so"** in Windows or Linux php.ini respectively.
 
