@@ -63,7 +63,7 @@ class LatchPS extends Module {
     public function install() {
         if (parent::install()) {
             return $this->registerHook('authentication') &&
-                    $this->registerHook('displayCustomerAccount') &&
+                    $this->registerHook('customerAccount') &&
                     $this->registerHook('displayHeader') &&
                     !LatchData::createTable();
         }
@@ -81,7 +81,7 @@ class LatchPS extends Module {
     /*
      * Displays the visual component to link to the configuration page.
      */
-    public function hookDisplayCustomerAccount() {
+    public function hookCustomerAccount() {
         if ($this->isUserLogged() && $this->currentControllerIs(self::$MY_ACCOUNT_CONTROLLER)) {
             $customerId = $this->context->cookie->id_customer;
             $customerData = LatchData::getLatchDataFromCustomerId($customerId);
