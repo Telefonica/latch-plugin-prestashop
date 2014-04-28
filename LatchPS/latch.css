@@ -80,6 +80,10 @@
     padding: 3px;
 }
 
+.latch_customers_accounts a{
+	color:#00b9be;
+}
+
 #latch_box {
     border-radius: 4px;
     border-radius: 4px !important;
