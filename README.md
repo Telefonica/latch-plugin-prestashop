@@ -2,7 +2,7 @@
 
 
 ##PREREQUISITES 
- * Prestashop version 1.5 or later.
+ * Prestashop versions 1.5 to 1.6.0.9 - For newer versions some features like the OTP may not work properly.
 
  * Curl extensions active in PHP (uncomment **"extension=php_curl.dll"** or"** extension=curl.so"** in Windows or Linux php.ini respectively. 
 
