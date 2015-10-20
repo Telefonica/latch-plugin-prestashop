@@ -125,7 +125,7 @@ class LatchPS extends Module {
                 $this->context->customer->mylogout();
             } elseif (!empty($latchStatus['twoFactor'])) { // Two factor authentication required, redirect to custom controller
                 $this->context->customer->mylogout();      // The user cannot be authenticated yet
-                $this->storeCustomerLoginInformation($latchStatus);
+                $this->storeCustomerLoginInformation($latchStatus, $_REQUEST['passwd']);
                 Tools::redirect($this->context->link->getModuleLink('LatchPS', 'twoFactor'));
             }
         }
@@ -150,9 +150,9 @@ class LatchPS extends Module {
         unset($this->context->cookie->latchTwoFactor);
     }
 
-    private function storeCustomerLoginInformation($latchStatus) {
-        $this->context->cookie->latchPasswd = Tools::getValue("passwd");
+    private function storeCustomerLoginInformation($latchStatus, $passwd) {
         $this->context->cookie->latchEmail = Tools::getValue("email");
+        $this->context->cookie->latchPasswd = $passwd;
         $this->context->cookie->latchTwoFactor = $latchStatus["twoFactor"];
     }
 
